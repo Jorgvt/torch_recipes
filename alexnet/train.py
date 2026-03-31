@@ -64,27 +64,19 @@ def train_one_epoch(model, criterion, optimizer, data_loader, device, epoch, arg
         metric_logger.meters["allocated_gpu_mem"].update(allocated)
         metric_logger.meters["reserved_gpu_mem"].update(reserved)
 
-
-        if args.output_dir:
+        if args.output_dir and i%80 == 0:
             checkpoint = {
                 "model": model_without_ddp.state_dict(),
-                "optimizer": optimizer.state_dict(),
-                "lr_scheduler": lr_scheduler.state_dict(),
-                "epoch": epoch,
-                "args": args,
+                #"optimizer": optimizer.state_dict(),
+                #"lr_scheduler": lr_scheduler.state_dict(),
+                #"epoch": epoch,
+                #"args": args,
             }
-            if model_ema:
-                checkpoint["model_ema"] = model_ema.state_dict()
-            if scaler:
-                checkpoint["scaler"] = scaler.state_dict()
+            #if model_ema:
+            #    checkpoint["model_ema"] = model_ema.state_dict()
+            #if scaler:
+            #    checkpoint["scaler"] = scaler.state_dict()
             utils.save_on_master(checkpoint, os.path.join(args.output_dir, f"model_epoch_{epoch}_iter_{i}_loss_{loss.item()}.pth"))
-            #utils.save_on_master(checkpoint, os.path.join(args.output_dir, "checkpoint.pth"))
-
-
-        #allocated = torch.cuda.memory_allocated() / 1024**3  # Convert to GB
-        #reserved = torch.cuda.memory_reserved() / 1024**3
-        #print(f'Epoch {epoch}, Batch {i}: '
-        #          f'Allocated: {allocated:.2f}GB, Reserved: {reserved:.2f}GB')
 
 
 def evaluate(model, criterion, data_loader, device, print_freq=100, log_suffix=""):
@@ -389,6 +381,10 @@ def main(args):
         return
 
     print("Start training")
+    if args.output_dir:
+        checkpoint = {"model": model_without_ddp.state_dict()}
+        utils.save_on_master(checkpoint, os.path.join(args.output_dir, f"model_init.pth"))
+
     start_time = time.time()
     for epoch in range(args.start_epoch, args.epochs):
         if args.distributed:
@@ -411,7 +407,7 @@ def main(args):
             if scaler:
                 checkpoint["scaler"] = scaler.state_dict()
             utils.save_on_master(checkpoint, os.path.join(args.output_dir, f"model_{epoch}.pth"))
-            utils.save_on_master(checkpoint, os.path.join(args.output_dir, "checkpoint.pth"))
+            utils.save_on_master(checkpoint, os.path.join(args.output_dir, "last_checkpoint.pth"))
 
     total_time = time.time() - start_time
     total_time_str = str(datetime.timedelta(seconds=int(total_time)))
