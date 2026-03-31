@@ -1,0 +1,210 @@
+W0201 22:13:07.483000 2173640 torch/distributed/run.py:852] 
+W0201 22:13:07.483000 2173640 torch/distributed/run.py:852] *****************************************
+W0201 22:13:07.483000 2173640 torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0201 22:13:07.483000 2173640 torch/distributed/run.py:852] *****************************************
+RANK: 1, WORLD_SIZE: 4, LOCAL_RANK: 1
+CUDA_VISIBLE_DEVICES=0,1,2,3
+RANK: 3, WORLD_SIZE: 4, LOCAL_RANK: 3
+CUDA_VISIBLE_DEVICES=0,1,2,3
+RANK: 2, WORLD_SIZE: 4, LOCAL_RANK: 2
+CUDA_VISIBLE_DEVICES=0,1,2,3
+RANK: 0, WORLD_SIZE: 4, LOCAL_RANK: 0
+CUDA_VISIBLE_DEVICES=0,1,2,3
+CUDA device count: 4
+CUDA device count: 4
+CUDA device count: 4
+CUDA device count: 4
+| distributed init (rank 1): env://
+| distributed init (rank 3): env://
+| distributed init (rank 2): env://
+| distributed init (rank 0): env://
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to [Gloo] Rank 32 peer ranks.  is connected to Expected number of connected peer ranks is : 33 peer ranks. 
+Expected number of connected peer ranks is : 3
+Okey init process
+Okey init process
+Okey init process
+Okey init process
+Finish init distributed
+Namespace(data_path='/media/disk/vista/BBDD_video_image/imagenet_complete/ILSVRC/Data/CLS-LOC', model='vit_b_16', device='cuda', batch_size=1024, epochs=4, workers=16, opt='adamw', lr=0.003, momentum=0.9, weight_decay=0.3, norm_weight_decay=None, bias_weight_decay=None, transformer_embedding_decay=None, label_smoothing=0.11, mixup_alpha=0.2, cutmix_alpha=1.0, lr_scheduler='cosineannealinglr', lr_warmup_epochs=30, lr_warmup_method='linear', lr_warmup_decay=0.033, lr_step_size=30, lr_gamma=0.1, lr_min=0.0, print_freq=10, output_dir='/media/disk/vista/BBDD_video_image/Modelos_epochs/vit/', resume='', start_epoch=0, cache_dataset=False, sync_bn=False, test_only=False, auto_augment='ra', ra_magnitude=9, augmix_severity=3, random_erase=0.0, amp=True, world_size=4, dist_url='env://', model_ema=True, model_ema_steps=32, model_ema_decay=0.99998, use_deterministic_algorithms=False, interpolation='bilinear', val_resize_size=256, val_crop_size=224, train_crop_size=224, clip_grad_norm=1.0, ra_sampler=True, ra_reps=3, weights=None, backend='pil', use_v2=False, rank=0, gpu=0, distributed=True, dist_backend='gloo')
+Loading data
+Loading training data
+Took 3.6847784519195557
+Loading validation data
+Creating data loaders
+Creating model
+/home/paherca/torch_recipes/vit/train.py:315: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler() if args.amp else None
+/home/paherca/torch_recipes/vit/train.py:315: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler() if args.amp else None
+/home/paherca/torch_recipes/vit/train.py:315: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler() if args.amp else None
+/home/paherca/torch_recipes/vit/train.py:315: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler() if args.amp else None
+Start training
+/home/paherca/torch_recipes/vit/train.py:29: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=scaler is not None):
+/home/paherca/torch_recipes/vit/train.py:29: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=scaler is not None):
+/home/paherca/torch_recipes/vit/train.py:29: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=scaler is not None):
+/home/paherca/torch_recipes/vit/train.py:29: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=scaler is not None):
+Epoch: [0]  [  0/313]  eta: 11:49:27  lr: 9.900000000000001e-05  img/s: 36.319304608302026  loss: 6.9062 (6.9062)  acc1: 0.0977 (0.0977)  acc5: 0.3906 (0.3906)  allocated_gpu_mem: 65.0967 (65.0967)  reserved_gpu_mem: 67.1133 (67.1133)  time: 135.9997  data: 86.5104  max mem: 68451
+Epoch: [0]  [ 10/313]  eta: 2:15:30  lr: 9.900000000000001e-05  img/s: 967.4694199621885  loss: 6.8939 (6.8938)  acc1: 0.2930 (0.2575)  acc5: 1.2695 (1.2518)  allocated_gpu_mem: 65.7428 (65.6843)  reserved_gpu_mem: 70.1914 (69.5968)  time: 26.8322  data: 7.8650  max mem: 69422
+Epoch: [0]  [ 20/313]  eta: 1:45:06  lr: 9.900000000000001e-05  img/s: 918.0136589503059  loss: 6.8784 (6.8785)  acc1: 0.2930 (0.2697)  acc5: 1.3672 (1.3393)  allocated_gpu_mem: 65.7426 (65.7120)  reserved_gpu_mem: 70.1914 (69.8799)  time: 15.7994  data: 0.0004  max mem: 69422
+Epoch: [0]  [ 30/313]  eta: 1:32:20  lr: 9.900000000000001e-05  img/s: 873.1911988162731  loss: 6.8481 (6.8623)  acc1: 0.2930 (0.3087)  acc5: 1.3672 (1.4648)  allocated_gpu_mem: 65.7422 (65.7217)  reserved_gpu_mem: 70.1914 (69.9804)  time: 15.5889  data: 0.0004  max mem: 69422
+Epoch: [0]  [ 40/313]  eta: 1:24:38  lr: 9.900000000000001e-05  img/s: 976.7178473747921  loss: 6.8157 (6.8458)  acc1: 0.2930 (0.3335)  acc5: 1.8555 (1.5887)  allocated_gpu_mem: 65.7425 (65.7269)  reserved_gpu_mem: 70.1914 (70.0319)  time: 15.5339  data: 0.0004  max mem: 69422
+Epoch: [0]  [ 50/313]  eta: 1:19:01  lr: 9.900000000000001e-05  img/s: 970.5908278807333  loss: 6.7761 (6.8316)  acc1: 0.3906 (0.3600)  acc5: 2.0508 (1.7119)  allocated_gpu_mem: 65.7429 (65.7301)  reserved_gpu_mem: 70.1914 (70.0632)  time: 15.6264  data: 0.0004  max mem: 69422
+Epoch: [0]  [ 60/313]  eta: 1:14:31  lr: 9.900000000000001e-05  img/s: 957.7646641688034  loss: 6.7598 (6.8175)  acc1: 0.5859 (0.4130)  acc5: 2.4414 (1.8891)  allocated_gpu_mem: 65.7427 (65.7321)  reserved_gpu_mem: 70.1914 (70.0842)  time: 15.7713  data: 0.0005  max mem: 69422
+Epoch: [0]  [ 70/313]  eta: 1:10:27  lr: 9.900000000000001e-05  img/s: 969.3844386769957  loss: 6.7576 (6.8060)  acc1: 0.5859 (0.4443)  acc5: 2.9297 (2.0081)  allocated_gpu_mem: 65.7431 (65.7337)  reserved_gpu_mem: 70.1914 (70.0993)  time: 15.7926  data: 0.0005  max mem: 69422
+Epoch: [0]  [ 80/313]  eta: 1:06:46  lr: 9.900000000000001e-05  img/s: 679.9831381896162  loss: 6.7050 (6.7942)  acc1: 0.6836 (0.4931)  acc5: 2.7344 (2.1074)  allocated_gpu_mem: 65.7427 (65.7348)  reserved_gpu_mem: 70.1914 (70.1107)  time: 15.7334  data: 0.0005  max mem: 69422
+Epoch: [0]  [ 90/313]  eta: 1:03:26  lr: 9.900000000000001e-05  img/s: 955.1078748632373  loss: 6.7010 (6.7820)  acc1: 0.7812 (0.5291)  acc5: 3.2227 (2.2257)  allocated_gpu_mem: 65.7425 (65.7357)  reserved_gpu_mem: 70.1914 (70.1195)  time: 15.8974  data: 0.0005  max mem: 69422
+Epoch: [0]  [100/313]  eta: 1:00:11  lr: 9.900000000000001e-05  img/s: 957.6156094985489  loss: 6.6705 (6.7724)  acc1: 0.7812 (0.5521)  acc5: 3.4180 (2.3476)  allocated_gpu_mem: 65.7423 (65.7363)  reserved_gpu_mem: 70.1914 (70.1266)  time: 15.9983  data: 0.0138  max mem: 69422
+Epoch: [0]  [110/313]  eta: 0:57:11  lr: 9.900000000000001e-05  img/s: 950.7482735873699  loss: 6.6703 (6.7622)  acc1: 0.7812 (0.5789)  acc5: 3.3203 (2.4379)  allocated_gpu_mem: 65.7423 (65.7369)  reserved_gpu_mem: 70.1914 (70.1325)  time: 16.1509  data: 0.0138  max mem: 69422
+Epoch: [0]  [120/313]  eta: 0:54:04  lr: 9.900000000000001e-05  img/s: 952.4765568120555  loss: 6.6267 (6.7497)  acc1: 0.9766 (0.6311)  acc5: 3.8086 (2.6262)  allocated_gpu_mem: 65.7425 (65.7373)  reserved_gpu_mem: 70.1914 (70.1373)  time: 16.0815  data: 0.0006  max mem: 69422
+Epoch: [0]  [130/313]  eta: 0:51:03  lr: 9.900000000000001e-05  img/s: 641.2992861291657  loss: 6.5895 (6.7382)  acc1: 1.0742 (0.6806)  acc5: 4.4922 (2.7597)  allocated_gpu_mem: 65.7423 (65.7377)  reserved_gpu_mem: 70.1914 (70.1415)  time: 15.8227  data: 0.0005  max mem: 69422
+Epoch: [0]  [140/313]  eta: 0:48:01  lr: 9.900000000000001e-05  img/s: 962.7527936855489  loss: 6.5678 (6.7267)  acc1: 1.3672 (0.7411)  acc5: 5.0781 (2.9262)  allocated_gpu_mem: 65.7416 (65.7380)  reserved_gpu_mem: 70.1914 (70.1450)  time: 15.6946  data: 0.0005  max mem: 69422
+Epoch: [0]  [150/313]  eta: 0:45:10  lr: 9.900000000000001e-05  img/s: 943.6545604788308  loss: 6.5574 (6.7166)  acc1: 1.2695 (0.7728)  acc5: 5.4688 (3.0661)  allocated_gpu_mem: 65.7419 (65.7383)  reserved_gpu_mem: 70.1914 (70.1481)  time: 15.8986  data: 0.0005  max mem: 69422
+Epoch: [0]  [160/313]  eta: 0:42:18  lr: 9.900000000000001e-05  img/s: 824.2053977708864  loss: 6.5687 (6.7106)  acc1: 1.1719 (0.7994)  acc5: 4.3945 (3.1480)  allocated_gpu_mem: 65.7422 (65.7385)  reserved_gpu_mem: 70.1914 (70.1508)  time: 16.1488  data: 0.0005  max mem: 69422
+Epoch: [0]  [170/313]  eta: 0:39:30  lr: 9.900000000000001e-05  img/s: 754.5021540805263  loss: 6.6376 (6.7028)  acc1: 1.0742 (0.8195)  acc5: 4.1992 (3.2449)  allocated_gpu_mem: 65.7423 (65.7387)  reserved_gpu_mem: 70.1914 (70.1532)  time: 16.1764  data: 0.0006  max mem: 69422
+Epoch: [0]  [180/313]  eta: 0:36:41  lr: 9.900000000000001e-05  img/s: 957.2406155716932  loss: 6.5076 (6.6915)  acc1: 1.2695 (0.8670)  acc5: 5.6641 (3.3824)  allocated_gpu_mem: 65.7418 (65.7389)  reserved_gpu_mem: 70.1914 (70.1553)  time: 16.2586  data: 0.0006  max mem: 69422
+Epoch: [0]  [190/313]  eta: 0:33:53  lr: 9.900000000000001e-05  img/s: 668.0510951766188  loss: 6.4733 (6.6818)  acc1: 1.6602 (0.9142)  acc5: 5.9570 (3.5202)  allocated_gpu_mem: 65.7418 (65.7391)  reserved_gpu_mem: 70.1914 (70.1572)  time: 16.1524  data: 0.0007  max mem: 69422
+Epoch: [0]  [200/313]  eta: 0:31:05  lr: 9.900000000000001e-05  img/s: 815.8810016625483  loss: 6.4814 (6.6727)  acc1: 1.7578 (0.9547)  acc5: 6.2500 (3.6599)  allocated_gpu_mem: 65.7420 (65.7392)  reserved_gpu_mem: 70.1914 (70.1589)  time: 16.0987  data: 0.0006  max mem: 69422
+Epoch: [0]  [210/313]  eta: 0:28:17  lr: 9.900000000000001e-05  img/s: 957.6294879887375  loss: 6.4286 (6.6615)  acc1: 1.8555 (0.9997)  acc5: 6.8359 (3.8141)  allocated_gpu_mem: 65.7420 (65.7394)  reserved_gpu_mem: 70.1914 (70.1604)  time: 16.0027  data: 0.0006  max mem: 69422
+Epoch: [0]  [220/313]  eta: 0:25:30  lr: 9.900000000000001e-05  img/s: 954.0254619006643  loss: 6.4260 (6.6535)  acc1: 1.8555 (1.0274)  acc5: 7.3242 (3.9363)  allocated_gpu_mem: 65.7420 (65.7395)  reserved_gpu_mem: 70.1914 (70.1618)  time: 15.9345  data: 0.0005  max mem: 69422
+Epoch: [0]  [230/313]  eta: 0:22:43  lr: 9.900000000000001e-05  img/s: 970.6886621796929  loss: 6.5276 (6.6474)  acc1: 1.4648 (1.0543)  acc5: 5.8594 (4.0250)  allocated_gpu_mem: 65.7421 (65.7396)  reserved_gpu_mem: 70.1914 (70.1631)  time: 15.8843  data: 0.0005  max mem: 69422
+Epoch: [0]  [240/313]  eta: 0:19:57  lr: 9.900000000000001e-05  img/s: 946.0242880094308  loss: 6.5503 (6.6413)  acc1: 1.5625 (1.0876)  acc5: 5.8594 (4.1226)  allocated_gpu_mem: 65.7425 (65.7397)  reserved_gpu_mem: 70.1914 (70.1643)  time: 15.8253  data: 0.0005  max mem: 69422
+Epoch: [0]  [250/313]  eta: 0:17:12  lr: 9.900000000000001e-05  img/s: 964.6760339406833  loss: 6.5257 (6.6339)  acc1: 1.9531 (1.1248)  acc5: 6.4453 (4.2292)  allocated_gpu_mem: 65.7428 (65.7399)  reserved_gpu_mem: 70.1914 (70.1653)  time: 15.8769  data: 0.0005  max mem: 69422
+Epoch: [0]  [260/313]  eta: 0:14:27  lr: 9.900000000000001e-05  img/s: 792.2199344711997  loss: 6.3575 (6.6241)  acc1: 2.3438 (1.1674)  acc5: 7.7148 (4.3646)  allocated_gpu_mem: 65.7425 (65.7399)  reserved_gpu_mem: 70.1914 (70.1663)  time: 15.9203  data: 0.0005  max mem: 69422
+Epoch: [0]  [270/313]  eta: 0:11:43  lr: 9.900000000000001e-05  img/s: 959.618476918598  loss: 6.4558 (6.6190)  acc1: 2.0508 (1.2021)  acc5: 7.1289 (4.4511)  allocated_gpu_mem: 65.7423 (65.7400)  reserved_gpu_mem: 70.1914 (70.1673)  time: 15.9220  data: 0.0005  max mem: 69422
+Epoch: [0]  [280/313]  eta: 0:08:58  lr: 9.900000000000001e-05  img/s: 969.8612028854437  loss: 6.4133 (6.6102)  acc1: 2.0508 (1.2372)  acc5: 7.2266 (4.5676)  allocated_gpu_mem: 65.7420 (65.7401)  reserved_gpu_mem: 70.1914 (70.1681)  time: 15.8253  data: 0.0009  max mem: 69422
+Epoch: [0]  [290/313]  eta: 0:06:14  lr: 9.900000000000001e-05  img/s: 956.8251999601672  loss: 6.3929 (6.6038)  acc1: 2.2461 (1.2699)  acc5: 7.4219 (4.6654)  allocated_gpu_mem: 65.7420 (65.7402)  reserved_gpu_mem: 70.1914 (70.1689)  time: 15.5749  data: 0.0007  max mem: 69422
+Epoch: [0]  [300/313]  eta: 0:03:31  lr: 9.900000000000001e-05  img/s: 967.2757200459791  loss: 6.4143 (6.5965)  acc1: 2.2461 (1.3068)  acc5: 7.1289 (4.7728)  allocated_gpu_mem: 65.7422 (65.7402)  reserved_gpu_mem: 70.1914 (70.1697)  time: 15.4538  data: 0.0002  max mem: 69422
+Epoch: [0]  [310/313]  eta: 0:00:48  lr: 9.900000000000001e-05  img/s: 965.1839641160072  loss: 6.3332 (6.5871)  acc1: 2.6367 (1.3556)  acc5: 9.1797 (4.9205)  allocated_gpu_mem: 65.7420 (65.7403)  reserved_gpu_mem: 70.1914 (70.1704)  time: 15.4237  data: 0.0002  max mem: 69422
+Epoch: [0] Total time: 1:24:45
+Test:   [ 0/13]  eta: 0:14:24  loss: 5.8758 (5.8758)  acc1: 2.7344 (2.7344)  acc5: 12.6953 (12.6953)  time: 66.4804  data: 63.6031  max mem: 69422
+Test:  Total time: 0:01:29
+Test:  Acc@1 3.832 Acc@5 12.064
+Test: EMA  [ 0/13]  eta: 0:06:42  loss: 5.9691 (5.9691)  acc1: 2.7344 (2.7344)  acc5: 11.1328 (11.1328)  time: 30.9287  data: 28.5756  max mem: 69422
+Test: EMA Total time: 0:00:54
+Test: EMA Acc@1 3.552 Acc@5 11.894
+Epoch: [1]  [  0/313]  eta: 7:38:18  lr: 0.0001957  img/s: 313.44051908188595  loss: 6.3107 (6.3107)  acc1: 2.5391 (2.5391)  acc5: 10.4492 (10.4492)  allocated_gpu_mem: 65.7446 (65.7446)  reserved_gpu_mem: 68.3535 (68.3535)  time: 87.8553  data: 65.3923  max mem: 69422
+Epoch: [1]  [ 10/313]  eta: 1:58:16  lr: 0.0001957  img/s: 950.9225670809577  loss: 6.3409 (6.3803)  acc1: 2.7344 (2.6190)  acc5: 8.8867 (8.3984)  allocated_gpu_mem: 65.7449 (65.7450)  reserved_gpu_mem: 69.5078 (69.4029)  time: 23.4199  data: 5.9455  max mem: 69422
+Epoch: [1]  [ 20/313]  eta: 1:36:55  lr: 0.0001957  img/s: 635.3395713947385  loss: 6.4511 (6.4067)  acc1: 2.3438 (2.4321)  acc5: 7.4219 (7.8962)  allocated_gpu_mem: 65.7452 (65.7451)  reserved_gpu_mem: 69.5078 (69.4528)  time: 16.4493  data: 0.0007  max mem: 69422
+Epoch: [1]  [ 30/313]  eta: 1:27:11  lr: 0.0001957  img/s: 937.966485405174  loss: 6.4917 (6.4122)  acc1: 2.1484 (2.3343)  acc5: 7.4219 (7.8093)  allocated_gpu_mem: 65.7452 (65.7451)  reserved_gpu_mem: 69.5078 (69.4706)  time: 15.7747  data: 0.0005  max mem: 69422
+Epoch: [1]  [ 40/313]  eta: 1:20:46  lr: 0.0001957  img/s: 956.7196974827054  loss: 6.4102 (6.4007)  acc1: 2.2461 (2.3604)  acc5: 8.0078 (7.8554)  allocated_gpu_mem: 65.7447 (65.7449)  reserved_gpu_mem: 69.5078 (69.4797)  time: 15.5536  data: 0.0005  max mem: 69422
+Epoch: [1]  [ 50/313]  eta: 1:15:55  lr: 0.0001957  img/s: 956.1710336966588  loss: 6.3479 (6.4001)  acc1: 1.8555 (2.3323)  acc5: 6.6406 (7.8546)  allocated_gpu_mem: 65.7443 (65.7449)  reserved_gpu_mem: 69.5078 (69.4852)  time: 15.5155  data: 0.0005  max mem: 69422
+Epoch: [1]  [ 60/313]  eta: 1:11:56  lr: 0.0001957  img/s: 953.9421868874706  loss: 6.3479 (6.3885)  acc1: 2.7344 (2.4078)  acc5: 9.8633 (8.0318)  allocated_gpu_mem: 65.7443 (65.7449)  reserved_gpu_mem: 69.5078 (69.4889)  time: 15.6457  data: 0.0005  max mem: 69422
+Epoch: [1]  [ 70/313]  eta: 1:08:24  lr: 0.0001957  img/s: 958.5812300554442  loss: 6.3668 (6.3884)  acc1: 2.8320 (2.4166)  acc5: 9.6680 (8.0353)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.4916)  time: 15.7920  data: 0.0005  max mem: 69422
+Epoch: [1]  [ 80/313]  eta: 1:05:03  lr: 0.0001957  img/s: 967.157228761561  loss: 6.3539 (6.3727)  acc1: 2.6367 (2.4945)  acc5: 9.5703 (8.2960)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.4936)  time: 15.8131  data: 0.0005  max mem: 69422
+Epoch: [1]  [ 90/313]  eta: 1:01:55  lr: 0.0001957  img/s: 670.6189971335699  loss: 6.2099 (6.3589)  acc1: 2.9297 (2.5616)  acc5: 10.4492 (8.5315)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.4951)  time: 15.8433  data: 0.0005  max mem: 69422
+Epoch: [1]  [100/313]  eta: 0:58:47  lr: 0.0001957  img/s: 716.2599067670983  loss: 6.2099 (6.3375)  acc1: 3.4180 (2.6667)  acc5: 11.8164 (8.8210)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.4964)  time: 15.7694  data: 0.0005  max mem: 69422
+Epoch: [1]  [110/313]  eta: 0:55:45  lr: 0.0001957  img/s: 935.61224273735  loss: 6.0835 (6.3209)  acc1: 3.6133 (2.7265)  acc5: 11.9141 (9.0486)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.4974)  time: 15.6518  data: 0.0005  max mem: 69422
+Epoch: [1]  [120/313]  eta: 0:52:55  lr: 0.0001957  img/s: 949.1399215268563  loss: 6.1163 (6.3155)  acc1: 3.5156 (2.7723)  acc5: 11.8164 (9.1757)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.4983)  time: 15.9042  data: 0.0005  max mem: 69422
+Epoch: [1]  [130/313]  eta: 0:50:06  lr: 0.0001957  img/s: 963.58697049988  loss: 6.2236 (6.3126)  acc1: 3.3203 (2.8253)  acc5: 11.4258 (9.2811)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.4990)  time: 16.1526  data: 0.0006  max mem: 69422
+Epoch: [1]  [140/313]  eta: 0:47:15  lr: 0.0001957  img/s: 927.7443233819487  loss: 6.2932 (6.3101)  acc1: 3.7109 (2.8667)  acc5: 10.5469 (9.3695)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.4996)  time: 16.0232  data: 0.0006  max mem: 69422
+Epoch: [1]  [150/313]  eta: 0:44:28  lr: 0.0001957  img/s: 949.593616382925  loss: 6.3201 (6.3132)  acc1: 2.7344 (2.8611)  acc5: 10.2539 (9.3550)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5002)  time: 15.9840  data: 0.0006  max mem: 69422
+Epoch: [1]  [160/313]  eta: 0:41:43  lr: 0.0001957  img/s: 895.6295439469683  loss: 6.3809 (6.3142)  acc1: 2.5391 (2.8727)  acc5: 8.5938 (9.3853)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5006)  time: 16.1601  data: 0.0006  max mem: 69422
+Epoch: [1]  [170/313]  eta: 0:38:57  lr: 0.0001957  img/s: 883.5690487211295  loss: 6.3809 (6.3150)  acc1: 2.5391 (2.8800)  acc5: 9.1797 (9.4001)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5011)  time: 16.1752  data: 0.0006  max mem: 69422
+Epoch: [1]  [180/313]  eta: 0:36:10  lr: 0.0001957  img/s: 941.8217879794995  loss: 6.2904 (6.3116)  acc1: 3.3203 (2.9227)  acc5: 10.8398 (9.5007)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5014)  time: 15.9854  data: 0.0006  max mem: 69422
+Epoch: [1]  [190/313]  eta: 0:33:23  lr: 0.0001957  img/s: 932.3360472948699  loss: 6.2516 (6.3089)  acc1: 3.8086 (2.9481)  acc5: 11.2305 (9.5601)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5018)  time: 15.7847  data: 0.0006  max mem: 69422
+Epoch: [1]  [200/313]  eta: 0:30:38  lr: 0.0001957  img/s: 851.8550839673702  loss: 6.1830 (6.3046)  acc1: 3.8086 (2.9982)  acc5: 11.7188 (9.6796)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5021)  time: 15.7979  data: 0.0005  max mem: 69422
+Epoch: [1]  [210/313]  eta: 0:27:54  lr: 0.0001957  img/s: 927.9329377003335  loss: 6.3437 (6.3030)  acc1: 3.7109 (3.0352)  acc5: 11.2305 (9.7536)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5023)  time: 15.9160  data: 0.0005  max mem: 69422
+Epoch: [1]  [220/313]  eta: 0:25:12  lr: 0.0001957  img/s: 957.4548618456794  loss: 6.3437 (6.2984)  acc1: 3.8086 (3.0817)  acc5: 11.3281 (9.8465)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5026)  time: 16.2577  data: 0.0005  max mem: 69422
+Epoch: [1]  [230/313]  eta: 0:22:30  lr: 0.0001957  img/s: 904.4477469498083  loss: 6.1577 (6.2948)  acc1: 4.0039 (3.1072)  acc5: 11.3281 (9.9233)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5028)  time: 16.4264  data: 0.0005  max mem: 69422
+Epoch: [1]  [240/313]  eta: 0:19:47  lr: 0.0001957  img/s: 947.8724231246439  loss: 6.0570 (6.2856)  acc1: 4.3945 (3.1757)  acc5: 13.8672 (10.1044)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5030)  time: 16.2674  data: 0.0005  max mem: 69422
+Epoch: [1]  [250/313]  eta: 0:17:04  lr: 0.0001957  img/s: 776.841534696051  loss: 6.1702 (6.2853)  acc1: 4.3945 (3.1974)  acc5: 14.4531 (10.1773)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5032)  time: 16.2771  data: 0.0005  max mem: 69422
+Epoch: [1]  [260/313]  eta: 0:14:22  lr: 0.0001957  img/s: 921.2093599873367  loss: 6.1359 (6.2762)  acc1: 4.9805 (3.2687)  acc5: 14.9414 (10.3531)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5034)  time: 16.3263  data: 0.0005  max mem: 69422
+Epoch: [1]  [270/313]  eta: 0:11:40  lr: 0.0001957  img/s: 949.316773173673  loss: 6.2153 (6.2772)  acc1: 4.2969 (3.2709)  acc5: 12.7930 (10.3512)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5036)  time: 16.4162  data: 0.0006  max mem: 69422
+Epoch: [1]  [280/313]  eta: 0:08:56  lr: 0.0001957  img/s: 951.5590280154847  loss: 6.2302 (6.2716)  acc1: 4.1016 (3.3196)  acc5: 12.7930 (10.4603)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5037)  time: 16.2784  data: 0.0010  max mem: 69422
+Epoch: [1]  [290/313]  eta: 0:06:13  lr: 0.0001957  img/s: 974.2530509437283  loss: 6.2156 (6.2696)  acc1: 4.1016 (3.3482)  acc5: 12.5977 (10.5103)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5038)  time: 15.7181  data: 0.0008  max mem: 69422
+Epoch: [1]  [300/313]  eta: 0:03:30  lr: 0.0001957  img/s: 953.2498512408433  loss: 6.3102 (6.2683)  acc1: 3.6133 (3.3680)  acc5: 11.5234 (10.5706)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5040)  time: 15.4331  data: 0.0003  max mem: 69422
+Epoch: [1]  [310/313]  eta: 0:00:48  lr: 0.0001957  img/s: 963.7915232375384  loss: 6.2268 (6.2640)  acc1: 3.6133 (3.4117)  acc5: 12.0117 (10.6690)  allocated_gpu_mem: 65.7443 (65.7450)  reserved_gpu_mem: 69.5078 (69.5041)  time: 15.4094  data: 0.0003  max mem: 69422
+Epoch: [1] Total time: 1:24:28
+Test:   [ 0/13]  eta: 0:06:01  loss: 5.4221 (5.4221)  acc1: 7.9102 (7.9102)  acc5: 22.7539 (22.7539)  time: 27.8245  data: 25.6565  max mem: 69422
+Test:  Total time: 0:00:51
+Test:  Acc@1 8.202 Acc@5 22.292
+Test: EMA  [ 0/13]  eta: 0:07:48  loss: 5.3627 (5.3627)  acc1: 9.3750 (9.3750)  acc5: 26.3672 (26.3672)  time: 36.0449  data: 33.9800  max mem: 69422
+Test: EMA Total time: 0:00:59
+Test: EMA Acc@1 7.890 Acc@5 21.446
+Epoch: [2]  [  0/313]  eta: 8:32:06  lr: 0.0002924  img/s: 465.5173444737522  loss: 6.2711 (6.2711)  acc1: 3.6133 (3.6133)  acc5: 12.5000 (12.5000)  allocated_gpu_mem: 65.7452 (65.7452)  reserved_gpu_mem: 69.5078 (69.5078)  time: 98.1682  data: 67.8875  max mem: 69422
+Epoch: [2]  [ 10/313]  eta: 2:01:20  lr: 0.0002924  img/s: 940.1570273387487  loss: 6.2711 (6.2010)  acc1: 3.6133 (4.2614)  acc5: 12.5000 (12.6776)  allocated_gpu_mem: 65.7451 (65.7450)  reserved_gpu_mem: 69.5078 (69.5078)  time: 24.0293  data: 6.1721  max mem: 69422
+Epoch: [2]  [ 20/313]  eta: 1:38:28  lr: 0.0002924  img/s: 885.5308712432433  loss: 6.0490 (6.1124)  acc1: 4.6875 (4.8131)  acc5: 14.7461 (13.7184)  allocated_gpu_mem: 65.7451 (65.7453)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2644  data: 0.0006  max mem: 69422
+Epoch: [2]  [ 30/313]  eta: 1:29:34  lr: 0.0002924  img/s: 936.4878268738075  loss: 6.0750 (6.1583)  acc1: 4.8828 (4.6812)  acc5: 13.4766 (13.2403)  allocated_gpu_mem: 65.7454 (65.7454)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2183  data: 0.0006  max mem: 69423
+Epoch: [2]  [ 40/313]  eta: 1:23:36  lr: 0.0002924  img/s: 674.360447226065  loss: 6.1069 (6.1234)  acc1: 4.6875 (4.7923)  acc5: 13.4766 (13.7195)  allocated_gpu_mem: 65.7450 (65.7453)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4953  data: 0.0007  max mem: 69423
+Epoch: [2]  [ 50/313]  eta: 1:18:32  lr: 0.0002924  img/s: 945.2460246544929  loss: 5.8331 (6.0994)  acc1: 5.3711 (4.8713)  acc5: 16.6016 (13.9227)  allocated_gpu_mem: 65.7448 (65.7452)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2537  data: 0.0007  max mem: 69423
+Epoch: [2]  [ 60/313]  eta: 1:14:26  lr: 0.0002924  img/s: 673.0741034373114  loss: 5.9250 (6.0931)  acc1: 5.1758 (4.8892)  acc5: 16.5039 (14.0929)  allocated_gpu_mem: 65.7448 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.1740  data: 0.0005  max mem: 69423
+Epoch: [2]  [ 70/313]  eta: 1:10:48  lr: 0.0002924  img/s: 728.8438185258407  loss: 6.0638 (6.0982)  acc1: 5.0781 (4.9186)  acc5: 15.0391 (14.2702)  allocated_gpu_mem: 65.7449 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.3735  data: 0.0005  max mem: 69423
+Epoch: [2]  [ 80/313]  eta: 1:07:23  lr: 0.0002924  img/s: 784.1354938028177  loss: 6.0638 (6.0943)  acc1: 5.1758 (4.9829)  acc5: 15.6250 (14.4013)  allocated_gpu_mem: 65.7449 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4351  data: 0.0007  max mem: 69423
+Epoch: [2]  [ 90/313]  eta: 1:04:07  lr: 0.0002924  img/s: 664.9717312868253  loss: 5.8994 (6.0871)  acc1: 6.3477 (5.0771)  acc5: 17.9688 (14.5637)  allocated_gpu_mem: 65.7449 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4358  data: 0.0007  max mem: 69423
+Epoch: [2]  [100/313]  eta: 1:00:56  lr: 0.0002924  img/s: 661.5544006718178  loss: 6.0038 (6.0890)  acc1: 5.6641 (5.0752)  acc5: 15.7227 (14.5285)  allocated_gpu_mem: 65.7446 (65.7450)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4115  data: 0.0005  max mem: 69423
+Epoch: [2]  [110/313]  eta: 0:57:43  lr: 0.0002924  img/s: 944.7742359533878  loss: 5.9793 (6.0746)  acc1: 6.5430 (5.2550)  acc5: 16.6992 (14.8094)  allocated_gpu_mem: 65.7446 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.1926  data: 0.0005  max mem: 69423
+Epoch: [2]  [120/313]  eta: 0:54:46  lr: 0.0002924  img/s: 553.6474683809458  loss: 5.7992 (6.0708)  acc1: 6.7383 (5.2928)  acc5: 17.3828 (14.9212)  allocated_gpu_mem: 65.7453 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.3408  data: 0.0005  max mem: 69423
+Epoch: [2]  [130/313]  eta: 0:51:45  lr: 0.0002924  img/s: 964.7052855695387  loss: 5.7015 (6.0558)  acc1: 5.8594 (5.4054)  acc5: 18.5547 (15.1576)  allocated_gpu_mem: 65.7451 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4469  data: 0.0005  max mem: 69423
+Epoch: [2]  [140/313]  eta: 0:48:48  lr: 0.0002924  img/s: 863.6122301291769  loss: 5.9016 (6.0538)  acc1: 6.4453 (5.4556)  acc5: 18.5547 (15.2676)  allocated_gpu_mem: 65.7447 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.3218  data: 0.0006  max mem: 69423
+Epoch: [2]  [150/313]  eta: 0:45:54  lr: 0.0002924  img/s: 974.6383986852834  loss: 5.9376 (6.0484)  acc1: 6.4453 (5.4765)  acc5: 17.8711 (15.3456)  allocated_gpu_mem: 65.7453 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4454  data: 0.0006  max mem: 69423
+Epoch: [2]  [160/313]  eta: 0:43:02  lr: 0.0002924  img/s: 936.3877821720873  loss: 5.8419 (6.0451)  acc1: 7.0312 (5.5367)  acc5: 19.9219 (15.4230)  allocated_gpu_mem: 65.7455 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.5131  data: 0.0006  max mem: 69424
+Epoch: [2]  [170/313]  eta: 0:40:09  lr: 0.0002924  img/s: 864.6197125937903  loss: 6.0133 (6.0484)  acc1: 5.9570 (5.5407)  acc5: 16.2109 (15.3920)  allocated_gpu_mem: 65.7455 (65.7452)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4655  data: 0.0006  max mem: 69424
+Epoch: [2]  [180/313]  eta: 0:37:15  lr: 0.0002924  img/s: 970.8536651304684  loss: 6.3096 (6.0634)  acc1: 4.4922 (5.4714)  acc5: 12.7930 (15.1907)  allocated_gpu_mem: 65.7458 (65.7452)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2475  data: 0.0006  max mem: 69424
+Epoch: [2]  [190/313]  eta: 0:34:25  lr: 0.0002924  img/s: 732.0513609100345  loss: 6.1617 (6.0526)  acc1: 4.9805 (5.5521)  acc5: 13.6719 (15.3377)  allocated_gpu_mem: 65.7451 (65.7452)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.3205  data: 0.0006  max mem: 69424
+Epoch: [2]  [200/313]  eta: 0:31:35  lr: 0.0002924  img/s: 715.0637179067969  loss: 5.6361 (6.0420)  acc1: 7.5195 (5.6252)  acc5: 20.0195 (15.4797)  allocated_gpu_mem: 65.7448 (65.7452)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4595  data: 0.0006  max mem: 69424
+Epoch: [2]  [210/313]  eta: 0:28:43  lr: 0.0002924  img/s: 941.0347508484714  loss: 5.6361 (6.0337)  acc1: 8.1055 (5.6978)  acc5: 20.4102 (15.6412)  allocated_gpu_mem: 65.7448 (65.7452)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.1386  data: 0.0006  max mem: 69424
+Epoch: [2]  [220/313]  eta: 0:25:53  lr: 0.0002924  img/s: 669.6494169172349  loss: 5.7353 (6.0254)  acc1: 8.2031 (5.7909)  acc5: 21.1914 (15.8150)  allocated_gpu_mem: 65.7447 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.0333  data: 0.0006  max mem: 69424
+Epoch: [2]  [230/313]  eta: 0:23:04  lr: 0.0002924  img/s: 820.5774685479528  loss: 6.0266 (6.0317)  acc1: 6.4453 (5.7710)  acc5: 17.2852 (15.7675)  allocated_gpu_mem: 65.7446 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2089  data: 0.0006  max mem: 69424
+Epoch: [2]  [240/313]  eta: 0:20:17  lr: 0.0002924  img/s: 691.4406555068315  loss: 6.1095 (6.0250)  acc1: 5.9570 (5.8387)  acc5: 16.7969 (15.8949)  allocated_gpu_mem: 65.7446 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.3323  data: 0.0005  max mem: 69424
+Epoch: [2]  [250/313]  eta: 0:17:29  lr: 0.0002924  img/s: 928.454280682405  loss: 5.7906 (6.0234)  acc1: 7.7148 (5.8987)  acc5: 19.8242 (15.9810)  allocated_gpu_mem: 65.7448 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.3677  data: 0.0006  max mem: 69424
+Epoch: [2]  [260/313]  eta: 0:14:42  lr: 0.0002924  img/s: 932.6229195510521  loss: 5.7906 (6.0181)  acc1: 7.8125 (5.9533)  acc5: 20.5078 (16.0961)  allocated_gpu_mem: 65.7448 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2965  data: 0.0006  max mem: 69424
+Epoch: [2]  [270/313]  eta: 0:11:54  lr: 0.0002924  img/s: 899.7899348459138  loss: 5.9323 (6.0152)  acc1: 7.8125 (5.9931)  acc5: 19.9219 (16.1799)  allocated_gpu_mem: 65.7453 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2215  data: 0.0006  max mem: 69424
+Epoch: [2]  [280/313]  eta: 0:09:08  lr: 0.0002924  img/s: 828.5818537070205  loss: 5.9323 (6.0139)  acc1: 6.7383 (6.0178)  acc5: 17.6758 (16.2339)  allocated_gpu_mem: 65.7450 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.1187  data: 0.0010  max mem: 69424
+Epoch: [2]  [290/313]  eta: 0:06:21  lr: 0.0002924  img/s: 970.1424902832543  loss: 5.8256 (6.0105)  acc1: 8.2031 (6.0466)  acc5: 20.7031 (16.2965)  allocated_gpu_mem: 65.7450 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 15.8900  data: 0.0008  max mem: 69424
+Epoch: [2]  [300/313]  eta: 0:03:35  lr: 0.0002924  img/s: 962.9721056582384  loss: 5.9730 (6.0108)  acc1: 8.2031 (6.0868)  acc5: 18.7500 (16.3566)  allocated_gpu_mem: 65.7458 (65.7451)  reserved_gpu_mem: 69.5078 (69.5078)  time: 15.5572  data: 0.0003  max mem: 69424
+Epoch: [2]  [310/313]  eta: 0:00:49  lr: 0.0002924  img/s: 963.0513501993049  loss: 6.0790 (6.0090)  acc1: 7.5195 (6.1046)  acc5: 18.3594 (16.4012)  allocated_gpu_mem: 65.7458 (65.7452)  reserved_gpu_mem: 69.5078 (69.5078)  time: 15.4991  data: 0.0003  max mem: 69424
+Epoch: [2] Total time: 1:26:09
+Test:   [ 0/13]  eta: 0:06:09  loss: 4.8867 (4.8867)  acc1: 17.0898 (17.0898)  acc5: 36.6211 (36.6211)  time: 28.4150  data: 26.3503  max mem: 69424
+Test:  Total time: 0:00:51
+Test:  Acc@1 13.106 Acc@5 30.578
+Test: EMA  [ 0/13]  eta: 0:07:29  loss: 4.9374 (4.9374)  acc1: 16.5039 (16.5039)  acc5: 36.0352 (36.0352)  time: 34.5901  data: 32.5033  max mem: 69424
+Test: EMA Total time: 0:00:57
+Test: EMA Acc@1 12.982 Acc@5 30.298
+Epoch: [3]  [  0/313]  eta: 7:54:29  lr: 0.0003891  img/s: 434.97004466604176  loss: 6.2057 (6.2057)  acc1: 7.1289 (7.1289)  acc5: 17.7734 (17.7734)  allocated_gpu_mem: 65.7461 (65.7461)  reserved_gpu_mem: 69.5078 (69.5078)  time: 90.9578  data: 59.2471  max mem: 69424
+Epoch: [3]  [ 10/313]  eta: 1:58:58  lr: 0.0003891  img/s: 945.7032917550999  loss: 6.2295 (6.0626)  acc1: 6.1523 (6.4276)  acc5: 14.8438 (16.1665)  allocated_gpu_mem: 65.7457 (65.7458)  reserved_gpu_mem: 69.5078 (69.5078)  time: 23.5591  data: 5.3866  max mem: 69424
+Epoch: [3]  [ 20/313]  eta: 1:37:28  lr: 0.0003891  img/s: 848.2709747705109  loss: 6.0886 (6.0131)  acc1: 6.1523 (6.7615)  acc5: 14.8438 (17.0573)  allocated_gpu_mem: 65.7457 (65.7456)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4099  data: 0.0005  max mem: 69424
+Epoch: [3]  [ 30/313]  eta: 1:27:52  lr: 0.0003891  img/s: 953.9733338545614  loss: 5.7612 (5.9723)  acc1: 7.7148 (6.9084)  acc5: 20.8984 (17.7608)  allocated_gpu_mem: 65.7458 (65.7457)  reserved_gpu_mem: 69.5078 (69.5078)  time: 15.9176  data: 0.0005  max mem: 69424
+Epoch: [3]  [ 40/313]  eta: 1:21:42  lr: 0.0003891  img/s: 961.3572399368969  loss: 5.7660 (5.9895)  acc1: 7.6172 (6.7288)  acc5: 20.8984 (17.4019)  allocated_gpu_mem: 65.7457 (65.7457)  reserved_gpu_mem: 69.5078 (69.5078)  time: 15.8577  data: 0.0005  max mem: 69424
+Epoch: [3]  [ 50/313]  eta: 1:17:22  lr: 0.0003891  img/s: 804.8600228135984  loss: 5.9823 (5.9723)  acc1: 7.9102 (6.9221)  acc5: 20.4102 (17.7964)  allocated_gpu_mem: 65.7458 (65.7458)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.1364  data: 0.0005  max mem: 69424
+Epoch: [3]  [ 60/313]  eta: 1:13:27  lr: 0.0003891  img/s: 780.7904269819957  loss: 5.9422 (5.9553)  acc1: 8.3008 (6.9400)  acc5: 22.3633 (17.9976)  allocated_gpu_mem: 65.7458 (65.7458)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.3152  data: 0.0005  max mem: 69424
+Epoch: [3]  [ 70/313]  eta: 1:10:04  lr: 0.0003891  img/s: 955.71571213045  loss: 5.9079 (5.9526)  acc1: 6.8359 (7.0863)  acc5: 19.0430 (18.2136)  allocated_gpu_mem: 65.7459 (65.7459)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4173  data: 0.0006  max mem: 69424
+Epoch: [3]  [ 80/313]  eta: 1:06:42  lr: 0.0003891  img/s: 932.1903505952281  loss: 5.9079 (5.9369)  acc1: 7.1289 (7.2350)  acc5: 19.0430 (18.4992)  allocated_gpu_mem: 65.7461 (65.7459)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4321  data: 0.0006  max mem: 69424
+Epoch: [3]  [ 90/313]  eta: 1:03:20  lr: 0.0003891  img/s: 949.5803897222561  loss: 5.6917 (5.9174)  acc1: 8.7891 (7.4165)  acc5: 22.4609 (18.8648)  allocated_gpu_mem: 65.7461 (65.7459)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.1205  data: 0.0006  max mem: 69424
+Epoch: [3]  [100/313]  eta: 1:00:06  lr: 0.0003891  img/s: 952.9903257986986  loss: 5.4916 (5.8921)  acc1: 8.9844 (7.5853)  acc5: 24.3164 (19.2702)  allocated_gpu_mem: 65.7458 (65.7459)  reserved_gpu_mem: 69.5078 (69.5078)  time: 15.9486  data: 0.0007  max mem: 69424
+Epoch: [3]  [110/313]  eta: 0:57:03  lr: 0.0003891  img/s: 705.4486171623569  loss: 5.4714 (5.8898)  acc1: 8.5938 (7.6110)  acc5: 24.6094 (19.3280)  allocated_gpu_mem: 65.7454 (65.7459)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.0432  data: 0.0006  max mem: 69424
+Epoch: [3]  [120/313]  eta: 0:54:04  lr: 0.0003891  img/s: 953.5662530444416  loss: 5.7760 (5.8791)  acc1: 8.8867 (7.6648)  acc5: 21.5820 (19.4578)  allocated_gpu_mem: 65.7456 (65.7459)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.1888  data: 0.0006  max mem: 69424
+Epoch: [3]  [130/313]  eta: 0:51:08  lr: 0.0003891  img/s: 674.8743688619552  loss: 5.7760 (5.8855)  acc1: 8.8867 (7.6813)  acc5: 22.3633 (19.4366)  allocated_gpu_mem: 65.7454 (65.7458)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2395  data: 0.0006  max mem: 69424
+Epoch: [3]  [140/313]  eta: 0:48:17  lr: 0.0003891  img/s: 957.2305884639352  loss: 5.7430 (5.8770)  acc1: 9.0820 (7.7363)  acc5: 22.5586 (19.5340)  allocated_gpu_mem: 65.7443 (65.7457)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.3913  data: 0.0006  max mem: 69424
+Epoch: [3]  [150/313]  eta: 0:45:22  lr: 0.0003891  img/s: 958.250588341337  loss: 5.4399 (5.8632)  acc1: 10.3516 (7.8597)  acc5: 25.2930 (19.8152)  allocated_gpu_mem: 65.7444 (65.7457)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2726  data: 0.0006  max mem: 69424
+Epoch: [3]  [160/313]  eta: 0:42:31  lr: 0.0003891  img/s: 788.7137048451079  loss: 5.5474 (5.8624)  acc1: 10.0586 (7.8950)  acc5: 25.1953 (19.8606)  allocated_gpu_mem: 65.7456 (65.7456)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.1724  data: 0.0006  max mem: 69424
+Epoch: [3]  [170/313]  eta: 0:39:39  lr: 0.0003891  img/s: 834.3003383652679  loss: 5.9775 (5.8717)  acc1: 7.0312 (7.8479)  acc5: 18.9453 (19.7488)  allocated_gpu_mem: 65.7456 (65.7457)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.1407  data: 0.0006  max mem: 69424
+Epoch: [3]  [180/313]  eta: 0:36:49  lr: 0.0003891  img/s: 952.3975645933365  loss: 6.0046 (5.8743)  acc1: 7.2266 (7.8460)  acc5: 18.9453 (19.6899)  allocated_gpu_mem: 65.7452 (65.7456)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.1083  data: 0.0005  max mem: 69424
+Epoch: [3]  [190/313]  eta: 0:34:03  lr: 0.0003891  img/s: 829.6216985102817  loss: 6.1274 (5.8890)  acc1: 6.2500 (7.7297)  acc5: 15.8203 (19.4372)  allocated_gpu_mem: 65.7449 (65.7456)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.3819  data: 0.0006  max mem: 69424
+Epoch: [3]  [200/313]  eta: 0:31:15  lr: 0.0003891  img/s: 951.8643931967883  loss: 6.1274 (5.8838)  acc1: 6.2500 (7.7746)  acc5: 15.8203 (19.5113)  allocated_gpu_mem: 65.7444 (65.7455)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4375  data: 0.0006  max mem: 69424
+Epoch: [3]  [210/313]  eta: 0:28:29  lr: 0.0003891  img/s: 956.7282220713424  loss: 5.4681 (5.8668)  acc1: 10.8398 (7.9296)  acc5: 26.1719 (19.8270)  allocated_gpu_mem: 65.7448 (65.7455)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.4253  data: 0.0006  max mem: 69424
+Epoch: [3]  [220/313]  eta: 0:25:41  lr: 0.0003891  img/s: 963.1828774158246  loss: 5.4037 (5.8639)  acc1: 11.4258 (7.9676)  acc5: 26.5625 (19.8684)  allocated_gpu_mem: 65.7448 (65.7455)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.3133  data: 0.0006  max mem: 69424
+Epoch: [3]  [230/313]  eta: 0:22:55  lr: 0.0003891  img/s: 966.9081432520779  loss: 5.9963 (5.8669)  acc1: 8.2031 (7.9634)  acc5: 19.1406 (19.8339)  allocated_gpu_mem: 65.7448 (65.7455)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.3435  data: 0.0006  max mem: 69424
+Epoch: [3]  [240/313]  eta: 0:20:08  lr: 0.0003891  img/s: 837.0183786859783  loss: 6.1004 (5.8669)  acc1: 6.6406 (7.9811)  acc5: 16.9922 (19.8323)  allocated_gpu_mem: 65.7451 (65.7455)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2873  data: 0.0005  max mem: 69424
+Epoch: [3]  [250/313]  eta: 0:17:20  lr: 0.0003891  img/s: 971.7045832679115  loss: 5.9114 (5.8611)  acc1: 7.7148 (8.0421)  acc5: 20.7031 (19.9744)  allocated_gpu_mem: 65.7451 (65.7455)  reserved_gpu_mem: 69.5078 (69.5078)  time: 15.9279  data: 0.0005  max mem: 69424
+Epoch: [3]  [260/313]  eta: 0:14:34  lr: 0.0003891  img/s: 685.6748730094922  loss: 5.4876 (5.8525)  acc1: 11.4258 (8.1212)  acc5: 25.4883 (20.1209)  allocated_gpu_mem: 65.7449 (65.7454)  reserved_gpu_mem: 69.5078 (69.5078)  time: 15.9740  data: 0.0005  max mem: 69424
+Epoch: [3]  [270/313]  eta: 0:11:49  lr: 0.0003891  img/s: 935.6697215408277  loss: 5.5110 (5.8499)  acc1: 11.8164 (8.1642)  acc5: 27.2461 (20.1911)  allocated_gpu_mem: 65.7450 (65.7454)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2177  data: 0.0005  max mem: 69424
+Epoch: [3]  [280/313]  eta: 0:09:04  lr: 0.0003891  img/s: 771.1454903176067  loss: 5.6054 (5.8426)  acc1: 11.8164 (8.2511)  acc5: 27.2461 (20.3320)  allocated_gpu_mem: 65.7450 (65.7454)  reserved_gpu_mem: 69.5078 (69.5078)  time: 16.2561  data: 0.0011  max mem: 69424
+Epoch: [3]  [290/313]  eta: 0:06:18  lr: 0.0003891  img/s: 956.7550755185117  loss: 5.5357 (5.8325)  acc1: 12.9883 (8.3645)  acc5: 29.1016 (20.5424)  allocated_gpu_mem: 65.7448 (65.7454)  reserved_gpu_mem: 69.5078 (69.5078)  time: 15.8617  data: 0.0010  max mem: 69424
+Epoch: [3]  [300/313]  eta: 0:03:33  lr: 0.0003891  img/s: 957.1958152283771  loss: 5.2268 (5.8227)  acc1: 13.1836 (8.4698)  acc5: 29.4922 (20.7690)  allocated_gpu_mem: 65.7448 (65.7454)  reserved_gpu_mem: 69.5078 (69.5078)  time: 15.5539  data: 0.0003  max mem: 69424
+Epoch: [3]  [310/313]  eta: 0:00:49  lr: 0.0003891  img/s: 954.9522144498821  loss: 5.2014 (5.8094)  acc1: 13.3789 (8.5724)  acc5: 30.2734 (20.9628)  allocated_gpu_mem: 65.7451 (65.7454)  reserved_gpu_mem: 69.5078 (69.5078)  time: 15.5221  data: 0.0003  max mem: 69424
+Epoch: [3] Total time: 1:25:32
+Test:   [ 0/13]  eta: 0:06:36  loss: 4.4871 (4.4871)  acc1: 24.5117 (24.5117)  acc5: 45.9961 (45.9961)  time: 30.4712  data: 28.4188  max mem: 69424
+Test:  Total time: 0:00:53
+Test:  Acc@1 17.854 Acc@5 37.826
+Test: EMA  [ 0/13]  eta: 0:05:56  loss: 4.4809 (4.4809)  acc1: 21.0938 (21.0938)  acc5: 45.7031 (45.7031)  time: 27.4242  data: 25.3677  max mem: 69424
+Test: EMA Total time: 0:00:55
+Test: EMA Acc@1 16.960 Acc@5 36.776
+Training time 5:51:02
