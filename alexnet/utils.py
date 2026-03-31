@@ -247,36 +247,26 @@ def init_distributed_mode(args):
         args.rank = int(os.environ["RANK"])
         args.world_size = int(os.environ["WORLD_SIZE"])
         args.gpu = int(os.environ["LOCAL_RANK"])
-        #print(f"RANK: {args.rank}")
-        #print(f"WORLD_SIZE: {args.world_size}")
-        #print(f"LOCAL_RANK: {args.gpu}")
-        print(f"RANK: {args.rank}, WORLD_SIZE: {args.world_size}, LOCAL_RANK: {args.gpu}", flush=True)
-        print(f"CUDA_VISIBLE_DEVICES={os.environ.get('CUDA_VISIBLE_DEVICES', 'NOT SET')}", flush=True)
-        print(f"CUDA device count: {torch.cuda.device_count()}", flush=True)
-        args.distributed = True
-    #elif "SLURM_PROCID" in os.environ:
-    #    args.rank = int(os.environ["SLURM_PROCID"])
-    #    args.gpu = args.rank % torch.cuda.device_count()
-    #elif hasattr(args, "rank"):
-    #    pass
+    elif "SLURM_PROCID" in os.environ:
+        args.rank = int(os.environ["SLURM_PROCID"])
+        args.gpu = args.rank % torch.cuda.device_count()
+    elif hasattr(args, "rank"):
+        pass
     else:
         print("Not using distributed mode")
         args.distributed = False
         return
 
-    #args.distributed = True
+    args.distributed = True
 
     torch.cuda.set_device(args.gpu)
-    args.dist_backend = "gloo"
+    args.dist_backend = "nccl"
     print(f"| distributed init (rank {args.rank}): {args.dist_url}", flush=True)
     torch.distributed.init_process_group(
-        backend=args.dist_backend, init_method=args.dist_url, world_size=args.world_size, rank=args.rank, device_id=torch.device(f"cuda:{args.gpu}")
+        backend=args.dist_backend, init_method=args.dist_url, world_size=args.world_size, rank=args.rank
     )
-    print('Okey init process', flush=True)
     torch.distributed.barrier()
     setup_for_distributed(args.rank == 0)
-
-    print('Finish init distributed', flush=True)
 
 
 def average_checkpoints(inputs):
